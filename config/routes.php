@@ -7,6 +7,8 @@ return function (App $app) {
 
     $app->get('/', \App\Action\HomeAction::class);
 
+    $app->post('/contact', \App\Action\ContactCreateAction::class);
+
     // $app->get('/', function(Request $request, Response $response): Response {
         
     //     $response->getBody()->write((string)json_encode(['test_JSON'=>true, 'test_JSON2'=> 34]));

@@ -8,7 +8,7 @@ final class ContactCreatorRepository {
 
     private $connection;
 
-    public function __contruct(PDO $connection) {
+    public function __construct(PDO $connection) {
 
         $this->connection = $connection;
 

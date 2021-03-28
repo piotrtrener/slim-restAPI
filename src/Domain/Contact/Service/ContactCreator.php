@@ -18,6 +18,8 @@ final class ContactCreator {
 
         $contactId = $this->repository->insertContact($data);
 
+        return $contactId;
+
     }
 
 }

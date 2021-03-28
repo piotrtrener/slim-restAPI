@@ -11,7 +11,9 @@ return function (App $app) {
     $app->group('/contact', function(Group $group){
         
         $group->get('', \App\Action\ContactsReadAction::class);
+        $group->get('/{id}', \App\Action\ContactReadAction::class);
         $group->post('', \App\Action\ContactCreateAction::class);
+        $group->delete('/{id}', \App\Action\ContactDeleteAction::class);
 
     });
     

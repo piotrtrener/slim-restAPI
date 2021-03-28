@@ -2,12 +2,18 @@
 // use Psr\Http\Message\ResponseInterface as Response;
 // use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
+use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 return function (App $app) {
 
     $app->get('/', \App\Action\HomeAction::class);
 
-    $app->post('/contact', \App\Action\ContactCreateAction::class);
+    $app->group('/contact', function(Group $group){
+        
+        $group->post('', \App\Action\ContactCreateAction::class);
+
+    });
+    
 
     // $app->get('/', function(Request $request, Response $response): Response {
         

@@ -10,6 +10,7 @@ return function (App $app) {
 
     $app->group('/contact', function(Group $group){
         
+        $group->get('', \App\Action\ContactsReadAction::class);
         $group->post('', \App\Action\ContactCreateAction::class);
 
     });
